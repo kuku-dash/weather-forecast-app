@@ -1,8 +1,8 @@
 h1 {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: 24px;
-  font-weight: 200;
+  font-size: 20px;
+  font-weight: 100;
   color: #202124;
   margin-bottom: 0;
 }
@@ -17,6 +17,24 @@ li {
   font-weight: 100;
   font-size: 16px;
   line-height: 19px;
+}
+.img-temp-overview {
+  margin-bottom: 20px;
+}
+.weather-temp img {
+  margin-right: 5px;
+  height: 64px;
+  width: 64px;
+}
+.weather-temp strong {
+  font-weight: 200;
+  font-size: 48px;
+  line-height: 60px;
+}
+.weather-temp small {
+  position: relative;
+  font-size: 12px;
+  top: 10px;
 }
 .app-wrapper {
   width: 600px;
