@@ -1,11 +1,3 @@
-.style-me {
-  width: 600px;
-  margin: 0 auto;
-  margin-top: 40px;
-  padding: 20px;
-  border: 1px solid silver;
-  border-radius: 4px;
-}
 h1 {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -25,4 +17,16 @@ li {
   font-weight: 100;
   font-size: 16px;
   line-height: 19px;
+}
+.app-wrapper {
+  width: 600px;
+  margin: 0 auto;
+}
+.style-me {
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 20px;
+  border: 1px solid silver;
+  border-radius: 4px;
 }
