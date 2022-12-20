@@ -9,7 +9,7 @@ function displayTemperature(response) {
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = response.data.main.humidity;
   let wind = document.querySelector("#wind");
-  wind.innerHTML = response.data.wind.speed;
+  wind.innerHTML = Math.round(response.data.wind.speed);
 }
 let apiKey = "93c9302a335ce19bd3e0802426872a43";
 let units = "metric";
