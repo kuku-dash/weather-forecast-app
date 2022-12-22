@@ -24,7 +24,6 @@ function newDate(timestamp) {
 }
 
 function displayTemperature(response) {
-  console.log(response);
   let temperature = document.querySelector("#temp");
   temperature.innerHTML = Math.round(response.data.main.temp);
   let cityElement = document.querySelector("#city");
