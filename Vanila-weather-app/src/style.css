@@ -17,6 +17,8 @@ li {
   font-weight: 100;
   font-size: 16px;
   line-height: 19px;
+}
+li:first-letter {
   text-transform: capitalize;
 }
 .img-temp-overview {
