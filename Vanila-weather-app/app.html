@@ -22,6 +22,10 @@
       <div class="app-wrapper">
         <div class="style-me">
           <div class="img-temp-overview">
+            <form id="search-form" class="mb-4">
+              <input type="text" placeholder="Enter city name" id="search-box"/>
+              <input type="submit" value="Search" />
+            </form>
             <h1 id="city"></h1>
             <ul>
               <li>Last Updatad: <span id="date"></span></li>
@@ -31,12 +35,7 @@
           <div class="row">
             <div class="col-6">
               <div class="d-flex weather-temp">
-                <img
-                  src="https://www.freeiconspng.com/thumbs/sun-icon/sun-icon-4.jpg"
-                  width="40px"
-                  alt="symbol"
-                  id="icon"
-                />
+                <img src="" width="40px" alt="symbol" id="icon" />
                 <strong id="temp"></strong><small>°C | °F</small>
               </div>
             </div>

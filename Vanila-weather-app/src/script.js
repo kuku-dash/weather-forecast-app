@@ -39,11 +39,21 @@ function displayTemperature(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
-    `https://openweathermap.org/img/wn/${response.data.weather(0).icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 }
-let apiKey = "93c9302a335ce19bd3e0802426872a43";
-let city = "Sydney";
-let units = "metric";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-axios.get(apiUrl).then(displayTemperature);
+function search(city) {
+  let apiKey = "93c9302a335ce19bd3e0802426872a43";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function submitQuery(event) {
+  event.preventDefualt();
+  let city = document.querySelector("#search-box");
+  search(city.value);
+}
+search("Lagos");
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", submitQuery);
