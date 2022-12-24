@@ -25,23 +25,19 @@ function newDate(timestamp) {
 
 function displayTemperature(response) {
   let temperature = document.querySelector("#temp");
-  temperature.innerHTML = Math.round(response.data.main.temp);
   let description = document.querySelector("#description");
-
-  description.innerHTML = response.data.weather[0].description;
   let humidity = document.querySelector("#humidity");
-
-  humidity.innerHTML = response.data.main.humidity;
   let wind = document.querySelector("#wind");
-  wind.innerHTML = Math.round(response.data.wind.speed);
-
   let cityElement = document.querySelector("#city");
-  cityElement.innerHTML = response.data.name;
-
   let dateElement = document.querySelector("#date");
-  dateElement.innerHTML = newDate(response.data.dt * 1000);
-
   let iconElement = document.querySelector("#icon");
+
+  temperature.innerHTML = Math.round(response.data.main.temp);
+  description.innerHTML = response.data.weather[0].description;
+  humidity.innerHTML = response.data.main.humidity;
+  wind.innerHTML = Math.round(response.data.wind.speed);
+  cityElement.innerHTML = response.data.name;
+  dateElement.innerHTML = newDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -58,15 +54,15 @@ function submitQuery(event) {
   let cityInput = document.querySelector("#search-box");
   search(cityInput.value);
 }
-search("Lagos");
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", submitQuery);
 
-function showCelsiusTemp(event) {
-  event.prevent.Default();
-  let celsiusTemp = document.querySelector("#temp");
-  celsiusTemp.innerHTML = response.data.main.temp;
-}
+//function showCelsiusTemp(event) {
+//event.prevent.Default();
+//let celsiusTemp = document.querySelector("#temp");
+//celsiusTemp.innerHTML = response.data.main.temp;
+//}
 
 function displayFahrenheit(event) {
   event.preventDefault();
@@ -80,3 +76,5 @@ fahLink.addEventListener("click", displayFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsiusTemp);
+
+search("Lagos");
