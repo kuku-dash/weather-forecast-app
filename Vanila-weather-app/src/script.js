@@ -55,7 +55,6 @@ function search(city) {
 }
 
 function submitQuery(event) {
-  event.preventDefualt();
   let cityInput = document.querySelector("#search-box");
   search(cityInput.value);
 }
@@ -63,10 +62,21 @@ search("Lagos");
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", submitQuery);
 
-function displayFahrenheit(event) {
-  event.preventDefualt();
-  alert("I am tired");
+function showCelsiusTemp(event) {
+  event.prevent.Default();
+  let celsiusTemp = document.querySelector("#temp");
+  celsiusTemp.innerHTML = response.data.main.temp;
 }
 
-let fah = document.querySelector("#fahrenheit");
-fah.addEventListener("click", displayFahrenheit);
+function displayFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitTemp = Math.round((33 * 9) / 5 + 32);
+  let temperature = document.querySelector("#temp");
+  temperature.innerHTML = fahrenheitTemp;
+}
+
+let fahLink = document.querySelector("#fahrenheit");
+fahLink.addEventListener("click", displayFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", showCelsiusTemp);
