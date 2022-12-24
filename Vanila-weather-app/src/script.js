@@ -32,7 +32,9 @@ function displayTemperature(response) {
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
 
-  temperature.innerHTML = Math.round(response.data.main.temp);
+  celsiusTemp = response.data.main.temp;
+
+  temperature.innerHTML = Math.round(celsiusTemp);
   description.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = response.data.main.humidity;
   wind.innerHTML = Math.round(response.data.wind.speed);
@@ -43,6 +45,7 @@ function displayTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 }
+
 function search(city) {
   let apiKey = "93c9302a335ce19bd3e0802426872a43";
   let units = "metric";
@@ -54,21 +57,22 @@ function submitQuery(event) {
   let cityInput = document.querySelector("#search-box");
   search(cityInput.value);
 }
+let celsiusTemp = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", submitQuery);
+search("Lagos");
 
-//function showCelsiusTemp(event) {
-//event.prevent.Default();
-//let celsiusTemp = document.querySelector("#temp");
-//celsiusTemp.innerHTML = response.data.main.temp;
-//}
+function showCelsiusTemp(event) {
+  let celsiusTemperature = document.querySelector("#temp");
+  celsiusTemperature.innerHTML = Math.round(celsiusTemp);
+}
 
 function displayFahrenheit(event) {
   event.preventDefault();
-  let fahrenheitTemp = Math.round((33 * 9) / 5 + 32);
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
   let temperature = document.querySelector("#temp");
-  temperature.innerHTML = fahrenheitTemp;
+  temperature.innerHTML = Math.round(fahrenheitTemp);
 }
 
 let fahLink = document.querySelector("#fahrenheit");
@@ -76,5 +80,3 @@ fahLink.addEventListener("click", displayFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsiusTemp);
-
-search("Lagos");
