@@ -23,8 +23,19 @@
         <div class="style-me">
           <div class="img-temp-overview">
             <form id="search-form" class="mb-4">
-              <input type="text" placeholder="Enter city name" id="search-box"/>
-              <input type="submit" value="Search" />
+              <div class="row">
+                <div class="col-8">
+                  <input
+                    type="search"
+                    placeholder="Enter city name"
+                    id="search-box"
+                    class="form-control"
+                  />
+                </div>
+                <div class="col-4">
+                  <input type="submit" value="Search" />
+                </div>
+              </div>
             </form>
             <h1 id="city"></h1>
             <ul>
@@ -36,7 +47,11 @@
             <div class="col-6">
               <div class="d-flex weather-temp">
                 <img src="" width="40px" alt="symbol" id="icon" />
-                <strong id="temp"></strong><small>°C | °F</small>
+                <strong id="temp"></strong
+                ><small
+                  ><a href="#" id="celsius">°C</a> |
+                  <a href="#" id="fahrenheit">°F</a>
+                </small>
               </div>
             </div>
             <div class="col-6">

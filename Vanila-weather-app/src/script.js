@@ -26,16 +26,21 @@ function newDate(timestamp) {
 function displayTemperature(response) {
   let temperature = document.querySelector("#temp");
   temperature.innerHTML = Math.round(response.data.main.temp);
-  let cityElement = document.querySelector("#city");
-  cityElement.innerHTML = response.data.name;
   let description = document.querySelector("#description");
+
   description.innerHTML = response.data.weather[0].description;
   let humidity = document.querySelector("#humidity");
+
   humidity.innerHTML = response.data.main.humidity;
   let wind = document.querySelector("#wind");
   wind.innerHTML = Math.round(response.data.wind.speed);
+
+  let cityElement = document.querySelector("#city");
+  cityElement.innerHTML = response.data.name;
+
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = newDate(response.data.dt * 1000);
+
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
@@ -57,3 +62,11 @@ function submitQuery(event) {
 search("Lagos");
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", submitQuery);
+
+function displayFahrenheit(event) {
+  event.preventDefualt();
+  alert("I am tired");
+}
+
+let fah = document.querySelector("#fahrenheit");
+fah.addEventListener("click", displayFahrenheit);
