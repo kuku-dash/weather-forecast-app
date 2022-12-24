@@ -51,8 +51,8 @@ function search(city) {
 
 function submitQuery(event) {
   event.preventDefualt();
-  let city = document.querySelector("#search-box");
-  search(city.value);
+  let cityInput = document.querySelector("#search-box");
+  search(cityInput.value);
 }
 search("Lagos");
 let form = document.querySelector("#search-form");
